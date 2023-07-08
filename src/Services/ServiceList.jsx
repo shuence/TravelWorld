@@ -15,7 +15,7 @@ const serviceData =[
     {
         imgUrl: guideImg,
         title: "Tour Guide",
-        desc: "Get a tour guide for your next Adventure trip"
+        desc: "Get a tour guide for your next Adventure"
     },
     {
         imgUrl: customizationImg,

@@ -16,7 +16,7 @@
 }
 
 .hero__content p{
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: var(--text-color);
     line-height: 2rem;
 }
@@ -52,4 +52,58 @@
 .featured__tour-title{
     font-size: 2.5rem;
     font-weight: 500;
+}
+
+.experience__content h2{
+    font-size: 2.5rem;
+    margin-top: 1rem;
+}
+
+.experience__content p{
+    font-size: 1rem;
+    color: var(--text-color);
+    line-height: 2rem;
+    margin-top: 1rem;
+}
+
+.counter__wrapper{
+    margin-top: 2rem;
+}
+
+.counter__box span{
+    width: 70px;
+    height: 70px;
+    margin: auto;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background: var(--primary-color);
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    border-radius: 10px 5px 10px 5px;
+}
+
+.counter__box h6{
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-top: 1rem;
+}
+
+.experience__img img{
+    width:90%;
+}
+
+.gallery__title{
+    font-size: 2.3rem;
+    margin-bottom: 2.5rem;
+    margin-top: 1rem;
+}
+
+.masonry__img{
+    transition: .3s;
+}
+
+.masonry__img:hover{
+    transform: scale(1.1);
 }
