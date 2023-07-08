@@ -107,3 +107,8 @@
 .masonry__img:hover{
     transform: scale(1.1);
 }
+
+.testimonials__title{
+    font-size: 2.3rem;
+    margin-top: 1rem;
+}
