@@ -38,12 +38,18 @@
 }
 
 .services__subtitle{
-    font-size: 1.2rem;
+    font-size: 1.8rem;
     font-weight: 500;
     color: #ee6e6e;
+    font-family: var(--subtitle-font-name);
 }
 
 .services__title{
     font-size: 2rem;
+    font-weight: 500;
+}
+
+.featured__tour-title{
+    font-size: 2.5rem;
     font-weight: 500;
 }

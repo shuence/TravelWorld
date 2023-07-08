@@ -7,7 +7,8 @@ import heroVideo from "../assets/images/hero-video.mp4"
 import Subtitle from '../Shared/Subtitle'
 import worldImg from "../assets/images/world.png"
 import SearchBar from '../Shared/SearchBar'
-
+import ServiceList from '../Services/ServiceList'
+import FeaturedToursList from '../FeaturedTours/FeaturedToursList'
 
 const Home = () => {
   return (
@@ -54,15 +55,26 @@ const Home = () => {
     <section>
       <Container>
         <Row>
-          <Col lg="3">
+          <Col lg="12">
             <h5 className="services__subtitle">What We Serve</h5>
             <h2 className="services__title">We Offer Our Best Services</h2>
           </Col>
-        </Row>
+          </Row>
+          <ServiceList/>
       </Container>
-
     </section>
 
+    <section>
+      <Container>
+        <Row>
+          <Col lg="12" className='mb-5'>
+            <Subtitle subtitle={"Explore"}/>
+            <h2 className="featured__tour-title">Our Featured Tours</h2>
+          </Col>
+          <FeaturedToursList/>
+        </Row>
+      </Container>
+    </section>
 
     </>
   )
