@@ -34,6 +34,10 @@
     color: var(--text-color);
 }
 
+.tour__rating span{
+    color:var(--text-color)
+}
+
 .tour__location{
     color: var(--heading-color);
     font-weight: 500;
@@ -43,6 +47,7 @@
 .tour__rating i,
 .tour__location i {
     font-size: 1rem;
+    color: var(--secondary-color);
 }
 
 .tour__title{
