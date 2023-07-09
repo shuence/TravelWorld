@@ -1,13 +1,20 @@
 const express = require('express');
-const path = require('path');
+const history = require('connect-history-api-fallback');
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, 'build')));
+// Serve static files
+app.use(express.static('build'));
 
-app.get('/*', function(req, res) {
+// Use history API fallback
+app.use(history());
+
+// Serve index.html on all routes
+app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
-app.listen(3000);
-console.log('Server started on port 3000');
+// Start the server
+app.listen(3000, () => {
+  console.log('Server is running on port 3000');
+});
