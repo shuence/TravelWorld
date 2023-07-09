@@ -20,9 +20,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "serve": "react-scripts start",
     "build": "react-scripts build",
-    "serve": "node server.js"
+    "start": "node server.js"
   },
   
   "eslintConfig": {
