@@ -1,10 +1,11 @@
 const express = require('express');
 const history = require('connect-history-api-fallback');
+const path = require('path');
 
 const app = express();
 
 // Serve static files
-app.use(express.static('build'));
+app.use(express.static(path.join(__dirname, 'build')));
 
 // Use history API fallback
 app.use(history());
