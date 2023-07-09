@@ -137,6 +137,11 @@
 }
 
 @media only screen and (max-width: 576px) {
+
+    .hero__content{
+        padding-top: .2rem;
+    }
+
     .hero__content h1{
         font-size: 1.8rem;
     }
