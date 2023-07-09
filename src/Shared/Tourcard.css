@@ -92,3 +92,12 @@
 .booking__btn:hover{
     color: #fff;
 }
+
+@media only screen and (max-width: 576px) {
+    .tour__title{
+        font-size: 1rem;
+    }
+}
+
+
+

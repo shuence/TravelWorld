@@ -6,7 +6,7 @@ import { Col } from 'reactstrap'
 const FeaturedToursList = () => {
   return (
     tourData.map(tour=> (
-        <Col lg="3" className='mb-4' key={tour.id}>
+        <Col lg="3" md="4" sm="6" className='mb-4' key={tour.id}>
             <TourCard tour={tour}/>
         </Col>
     ))
