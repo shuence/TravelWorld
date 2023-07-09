@@ -1,28 +1,13 @@
 const express = require('express');
-const React = require('react');
-const ReactDOMServer = require('react-dom/server');
-const App = require('./src/App'); // Import your React app component
+const path = require('path');
 
 const app = express();
 
-app.use(express.static('build')); // Serve the built static files
+app.use(express.static(path.join(__dirname, 'build')));
 
-app.get('*', (req, res) => {
-  const html = ReactDOMServer.renderToString(<App />);
-  res.send(`
-    <!DOCTYPE html>
-    <html>
-      <head>
-        <title>Your App</title>
-      </head>
-      <body>
-        <div id="root">${html}</div>
-        <script src="/static/js/main.js"></script> <!-- Include your bundled JS file -->
-      </body>
-    </html>
-  `);
+app.get('/*', function(req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
-app.listen(3000, () => {
-  console.log('Server is running on port 3000');
-});
+app.listen(3000);
+console.log('Server started on port 3000');
