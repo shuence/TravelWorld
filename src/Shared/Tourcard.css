@@ -97,6 +97,19 @@
     .tour__title{
         font-size: 1rem;
     }
+
+    .booking__btn a{
+        font-size: 0.8rem;
+    }
+
+    .booking__btn{
+        padding: 0.2 0.5rem !important;
+    }
+
+    .tour__location, .tour__rating{
+        font-size: 1.5rem;
+    }
+
 }
 
 

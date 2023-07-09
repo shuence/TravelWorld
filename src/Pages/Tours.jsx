@@ -33,7 +33,7 @@ const Tours = () => {
         <Container>
           <Row>
             {tourData?.map((tour) => (
-              <Col lg="3" key={tour.id} className="mb-4">
+              <Col lg="3" md="6" sm="6" key={tour.id} className="mb-4">
                 <TourCard tour={tour} />
               </Col>
             ))}

@@ -101,5 +101,12 @@ ul {
   }
   }
 
+  @media only screen and (max-width: 768px) {
+    .section__subtitle{
+      font-size: 1.3rem;
+    }
+  }
+
+
 
 

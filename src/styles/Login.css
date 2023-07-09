@@ -74,3 +74,31 @@
     margin-left: 5px;
     font-weight: 500;
 }
+
+@media only screen and (max-width: 768px) {
+  .login__img{
+    display: none;
+  }
+
+  .login__form{
+    width: 70%;
+    margin: auto;
+  }
+
+  .login__container{
+    padding: 2rem;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .login__form{
+    width: 100%;
+  }
+  .login__container{
+    padding-bottom: 2rem;
+  }
+}
+
+
+
+

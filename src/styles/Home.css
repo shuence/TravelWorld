@@ -126,8 +126,13 @@
         display: block;
     }
 
-    .services__title{
+    .services__title, .featured__tour-title,  .gallery__title, .testimonials__title
+    , .experience__content h2{
         font-size: 2rem;
+    }
+
+    .experience__img{
+        margin-top: 2rem;
     }
 }
 
@@ -136,7 +141,9 @@
         font-size: 1.8rem;
     }
 
-    .services__title{
+    .services__title, .featured__tour-title, .gallery__title, .testimonials__title,
+    .experience__content h2
+    {
         font-size: 1.5rem;
     }
 }
