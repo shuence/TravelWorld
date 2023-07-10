@@ -27,7 +27,11 @@ const TourCard = ({ tour }) => {
     <div className="tour__card">
       <Card>
         <div className="tour__img">
-          <img src={photo} alt="tour" />
+        <Link to={`/tours/${id}`}>
+              <div onClick={handleScrollToTop}>
+              <img src={photo} alt="tour" />
+              </div>
+            </Link>
           <span>Featured</span>
         </div>
         <CardBody>
