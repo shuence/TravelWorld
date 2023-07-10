@@ -3,7 +3,6 @@ import { Card, CardBody } from "reactstrap";
 import { Link } from "react-router-dom";
 import "./Tourcard.css";
 import calculateAvgRating from "../utils/avgRating";
-import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
 // ...
@@ -12,11 +11,6 @@ const TourCard = ({ tour }) => {
   const { id, title, city, photo, price, reviews } = tour;
 
   const { totalRating, avgRating } = calculateAvgRating(reviews);
-  const navigate = useNavigate();
-
-  const handleBookNow = () => {
-    navigate(`/tours/${id}`);
-  };
 
   const handleScrollToTop = () => {
     window.scrollTo({
