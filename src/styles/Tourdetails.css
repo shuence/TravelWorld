@@ -136,4 +136,11 @@
 
 }
 
+@media only screen and (max-width: 576px) {
+  .review__input{
+    font-size: .8rem;
+  }
+}
+
+
 

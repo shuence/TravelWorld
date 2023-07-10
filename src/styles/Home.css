@@ -151,5 +151,10 @@
     {
         font-size: 1.5rem;
     }
+
+    .counter__box h6{
+        font-size: 0.7rem;
+
+    }
 }
 

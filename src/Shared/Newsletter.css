@@ -66,5 +66,10 @@
     .newsletter__content p{
         display: none;
     }
+
+    .newsletter__btn{
+        padding: 0.5rem 0.5rem !important;
+    }
+
 }
 
