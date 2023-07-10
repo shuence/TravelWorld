@@ -7,11 +7,13 @@ import Login from '../Pages/Login'
 import Register from '../Pages/Register'
 import SearchResultList from '../Pages/SearchResultList'
 import ThankYou from '../Pages/ThankYou'
+import About from '../Pages/About'
 
 const Router = () => {
   return (
     <Routes>
       <Route path='/' element={<Home/>}/>
+      <Route path='/about' element={<About/>}/>
       <Route path='/tours' element={<Tours/>}/>
       <Route path='/tours/:id' element={<TourDetails/>}/>
       <Route path='/login' element={<Login/>}/>

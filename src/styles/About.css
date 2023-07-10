@@ -1,0 +1,58 @@
+.about {
+    padding: 80px 0;
+    background-color: #f8f8f8;
+  }
+  
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  .sectionTitle {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 30px;
+  }
+  
+  .aboutContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .aboutText {
+    flex: 1;
+  }
+  
+  .aboutHeading {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+  
+  .aboutDescription {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  .about__image {
+    flex: 1;
+    text-align: center;
+    margin-left: 8rem;
+  }
+
+  .about__image{
+    mix-blend-mode: multiply;
+  filter: contrast(1);
+  }
+  
+@media only screen and (max-width: 576px) {
+    .about__image{
+      margin: auto;
+      text-align: center;
+      align-items: center;
+    }
+  }
+  
