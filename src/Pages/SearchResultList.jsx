@@ -33,13 +33,9 @@ const SearchResultList = () => {
               ))
             )}
           </Row>
-          <Row>
-            <Col>
-              <Newsletter/>
-              </Col>
-          </Row>
         </Container>
       </section>
+      <Newsletter/>
     </div>
   );
 };

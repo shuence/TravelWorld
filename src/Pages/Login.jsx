@@ -40,17 +40,18 @@ const Login = () => {
       });
 
       const result = await res.json();
-      
+
       console.log("Login Data:", result);
 
       if (!res.ok) {
         alert(result.message);
         dispatch({ type: "LOGIN_FAILURE", payload: result.message });
+      } else {
+        dispatch({ type: "LOGIN_SUCCESS", payload: result });
+        navigate("/");
       }
-
-      dispatch({ type: "LOGIN_SUCCESS", payload: result });
-      navigate("/");
     } catch (error) {
+      alert(error.message);
       dispatch({ type: "LOGIN_FAILURE", payload: error.message });
     }
   };
