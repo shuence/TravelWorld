@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import "./searchbar.css";
 import { Col, Form, FormGroup } from "reactstrap";
 import axios from "axios";
@@ -10,8 +10,6 @@ const SearchBar = () => {
   const distanceRef = useRef(0);
   const maxGroupSizeRef = useRef(0);
   const navigate = useNavigate();
-
-  const [searchResult, setSearchResult] = useState([]);
 
   const searchHandler = async () => {
     const location = locationRef.current.value;
@@ -27,10 +25,6 @@ const SearchBar = () => {
     try {
       // Make an API call to fetch the search results
       const response = await axios.get(`${BASE_URL}/search?${searchParams}`);
-    
-      // Update the state with the search results
-      setSearchResult(response.data.data);
-      console.log(response)
   
       navigate(`/search?${searchParams}`, { state: { searchResult: response.data.data } });
     } catch (error) {
@@ -38,7 +32,6 @@ const SearchBar = () => {
     }
   };
 
-  
   return (
     <Col lg="12">
       <div className="search__bar">
