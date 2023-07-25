@@ -1,9 +1,10 @@
 import React from "react";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useContext } from "react";
 import { Container, Row, Button } from "reactstrap";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
 import "./header.css";
+import { AuthContext } from "../../context/AuthContext";
 
 const nav__links = [
   {
@@ -23,7 +24,13 @@ const nav__links = [
 const Header = () => {
   const headerRef = useRef(null);
   const menuRef = useRef(null);
+  const {user, dispatch } = useContext(AuthContext);
+  const navigate = useNavigate();
 
+  const logout =()=>{
+    dispatch({ type: "LOGOUT" });
+    navigate("/");
+  }
   const stickyHeaderFunc = () => {
     window.addEventListener("scroll", () => {
       if (headerRef.current) {
@@ -51,7 +58,6 @@ const Header = () => {
       <Container>
         <Row>
           <div className="nav__wrapper d-flex align-items-center justify-content-between">
-            {/* Logo*/}
             <div className="logo">
               <Link to="/"><img src={logo} alt="" /></Link>
             </div>
@@ -77,12 +83,31 @@ const Header = () => {
 
             <div className="nav__right d-flex align-items-center gap-4">
               <div className="nav__btns d-flex align-items-center gap-4">
-                <Button className="btn secondary__btn">
-                  <Link to="/login">Login</Link>
-                </Button>
-                <Button className="btn primary__btn">
-                  <Link to="/register">Register</Link>
-                </Button>
+                {
+                   user ? (
+                    <>
+                      {window.innerWidth >= 576 ? (
+                        <>
+                          <h5 className="mb-0 p-2 logged__in_h5">{user.username}</h5>
+                          <Button className="btn btn-dark" onClick={logout}>
+                            Logout
+                          </Button>
+                        </>
+                      ) : (
+                        <i className="ri-user-line" />
+                      )}
+                    </>
+                  ) : (
+                    <>
+                      <Button className="btn secondary__btn">
+                        <Link to="/login">Login</Link>
+                      </Button>
+                      <Button className="btn primary__btn">
+                        <Link to="/register">Register</Link>
+                      </Button>
+                    </>
+                  )
+                }
               </div>
 
               <span className="mobile__menu" onClick={toggleMenu}>

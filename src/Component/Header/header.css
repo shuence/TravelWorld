@@ -1,156 +1,182 @@
 .header {
-    width: 100%;
-    height: 80px;
-    line-height: 80px;
-  }
-  
+  width: 100%;
+  height: 80px;
+  line-height: 80px;
+}
+
+.logo img {
+  width: 30%;
+}
+
+.menu {
+  margin-bottom: 0;
+}
+
+.nav__item a {
+  text-decoration: none;
+  color: var(--heading-color);
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.nav__item a:hover {
+  color: inherit;
+}
+
+.nav__item a.active__link {
+  color: var(--secondary-color);
+}
+
+.mobile__menu {
+  font-size: 1.3rem;
+  color: var(--heading-color);
+  display: none;
+}
+
+.sticky__header {
+  width: 100%;
+  height: 80px;
+  line-height: 80px;
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  left: 0;
+  box-shadow: 3px 3px 8px -3px #ddd;
+}
+
+@media only screen and (max-width: 992px) {
   .logo img {
-    width: 30%;
+    width: 40%;
   }
-  
-  .menu {
-    margin-bottom: 0;
-  }
-  
-  .nav__item a {
-    text-decoration: none;
-    color: var(--heading-color);
-    font-weight: 500;
-    font-size: 1.1rem;
-  }
-  
-  .nav__item a:hover {
-    color: inherit;
-  }
-  
-  .nav__item a.active__link {
-    color: var(--secondary-color);
-  }
-  
-  .mobile__menu {
-    font-size: 1.3rem;
-    color: var(--heading-color);
+
+  .navigation {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.411);
+    z-index: 999;
     display: none;
   }
-  
-  .sticky__header {
-    width: 100%;
-    height: 80px;
-    line-height: 80px;
-    background: #fff;
-    position: sticky;
+
+  .menu {
+    position: absolute;
     top: 0;
-    z-index: 999;
+    right: 0;
+    width: calc(100% - 75%);
+    height: 100%;
+    background: #fff;
+    flex-direction: column;
+    line-height: 1rem;
+    justify-content: center;
+    z-index: 9999;
+    animation-name: slideInRight;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+  }
+
+  .show__menu {
+    display: block;
+  }
+
+  .mobile__menu {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .logo img {
+    width: 45%;
+  }
+
+  .menu {
+    width: calc(100% - 50%);
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .logo img {
+    width: 50%;
+  }
+
+  .navigation {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
     left: 0;
-    box-shadow: 3px 3px 8px -3px #ddd;
-  }
-  
-  @media only screen and (max-width: 992px) {
-    .logo img {
-      width: 40%;
-    }
-  
-    .navigation {
-      width: 100%;
-      height: 100%;
-      position: fixed;
-      top: 0;
-      left: 0;
-      background: rgba(0, 0, 0, 0.411);
-      z-index: 999;
-      display: none;
-    }
-  
-    .menu {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: calc(100% - 75%);
-      height: 100%;
-      background: #fff;
-      flex-direction: column;
-      line-height: 1rem;
-      justify-content: center;
-      z-index: 9999;
-      animation-name: slideInRight;
-      animation-duration: 0.3s;
-      animation-fill-mode: forwards;
-    }
-  
-    .show__menu {
-      display: block;
-    }
-      
-    .mobile__menu {
-      display: block;
-    }
-  }
-  
-  @keyframes slideInRight {
-    from {
-      transform: translateX(100%);
-    }
-    to {
-      transform: translateX(0);
-    }
+    background: rgba(0, 0, 0, 0.411);
+    z-index: 999;
+    display: none;
   }
 
-  @media only screen and (max-width: 768px) {
-    .logo img{
-      width: 45%;
-    }
-
-    .menu{
-      width: calc(100-50%);
-    }
+  .menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    flex-direction: column;
+    line-height: 1rem;
+    justify-content: center;
+    z-index: 9999;
+    animation-name: slideInRight;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
   }
 
-  @media only screen and (max-width: 576px) {
-    .logo img {
-      width: 70%;
-    }
-  
-    .navigation {
-      width: 100%;
-      height: 100%;
-      position: fixed;
-      top: 0;
-      left: 0;
-      background: rgba(0, 0, 0, 0.411);
-      z-index: 999;
-      display: none;
-    }
-  
-    .menu {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 100%;
-      height: 100%;
-      background: #fff;
-      flex-direction: column;
-      line-height: 1rem;
-      justify-content: center;
-      z-index: 9999;
-      animation-name: slideInRight;
-      animation-duration: 0.3s;
-      animation-fill-mode: forwards;
-    }
-  
-    .show__menu {
-      display: block;
-    }
-  
-    .mobile__menu {
-      display: block;
-    }
+  .show__menu {
+    display: block;
   }
-  
-  @keyframes slideInRight {
-    from {
-      transform: translateX(100%);
-    }
-    to {
-      transform: translateX(0);
-    }
+
+  .mobile__menu {
+    display: block;
   }
+}
+
+
+
+@media only screen and (max-width: 376px) {
+  .logo img {
+    width: 60%;
+  }
+
+  .mobile__menu {
+    font-size: 1.2rem;
+    padding: 0.5rem; /* Add some padding for easy tapping */
+  }
+
+  .logged__in_h5 {
+    font-size: 0.8rem;
+  }
+
+  .logged__in {
+    font-size: 0.7rem;
+  }
+
+  .nav__item a {
+    font-size: 1rem;
+  }
+
+  h5 {
+    font-size: 1rem;
+  }
+
+  .menu {
+    width: calc(100% - 40%);
+  }
+}
+
+
+  
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}

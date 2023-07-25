@@ -3,7 +3,7 @@ import Header from '../Header/Header'
 import Router from '../../Router/Routers'
 import Footer from '../Footer/Footer'
 
-const Layout = () => {
+const Layout = () => { 
   return (
     <div>
         <Header/>

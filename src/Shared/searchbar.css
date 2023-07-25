@@ -39,6 +39,14 @@
     cursor: pointer;
 }
 
+.no-results {
+    text-align: center;
+    padding: 20px;
+    font-size: 1.2rem;
+    color: var(--heading-color);
+  }
+  
+
 @media only screen and (max-width: 992px) {
     .search__bar{
         width: 100%;

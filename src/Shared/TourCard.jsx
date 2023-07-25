@@ -8,7 +8,7 @@ import { useEffect } from "react";
 // ...
 
 const TourCard = ({ tour }) => {
-  const { id, title, city, photo, price, reviews } = tour;
+  const { _id, title, city, photo, price, reviews } = tour;
 
   const { totalRating, avgRating } = calculateAvgRating(reviews);
 
@@ -27,7 +27,7 @@ const TourCard = ({ tour }) => {
     <div className="tour__card">
       <Card>
         <div className="tour__img">
-        <Link to={`/tours/${id}`}>
+        <Link to={`/tours/${_id}`}>
               <div onClick={handleScrollToTop}>
               <img src={photo} alt="tour" />
               </div>
@@ -51,7 +51,7 @@ const TourCard = ({ tour }) => {
           </div>
 
           <h5 className="tour__title">
-            <Link to={`/tours/${id}`}>
+            <Link to={`/tours/${_id}`}>
               <div onClick={handleScrollToTop}>{title}</div>
             </Link>
           </h5>
@@ -62,7 +62,7 @@ const TourCard = ({ tour }) => {
               <span>/Per Person</span>
             </h5>
             <button className="btn booking__btn">
-              <Link to={`/tours/${id}`}>
+              <Link to={`/tours/${_id}`}>
                 <div onClick={handleScrollToTop}>Book Now</div>
               </Link>{" "}
             </button>
