@@ -1,5 +1,4 @@
-import React from "react";
-import { useRef, useEffect, useContext } from "react";
+import React, { useRef, useEffect, useContext } from "react";
 import { Container, Row, Button } from "reactstrap";
 import { NavLink, Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
@@ -48,7 +47,7 @@ const Header = () => {
 
   useEffect(() => {
     stickyHeaderFunc();
-    return window.removeEventListener("scroll", stickyHeaderFunc);
+    return () => window.removeEventListener("scroll", stickyHeaderFunc);
   });
 
   const toggleMenu = () => menuRef.current.classList?.toggle("show__menu");
@@ -87,19 +86,14 @@ const Header = () => {
               <div className="nav__btns d-flex align-items-center gap-4">
                 {user ? (
                   <>
-                    {window.innerWidth >= 576 ? (
-                      <>
-                        <h5 className="mb-0 p-2 logged__in_h5">
-                          {user.username.charAt(0).toUpperCase() +
-                            user.username.slice(1)}
-                        </h5>
-                        <Button className="btn btn-dark" onClick={logout}>
-                          Logout
-                        </Button>
-                      </>
-                    ) : (
-                      <i className="ri-user-line" />
-                    )}
+                    {/* Optionally display user's name */}
+                    <h5 className="mb-0 p-2 logged__in_h5">
+                      {user.username.charAt(0).toUpperCase() +
+                        user.username.slice(1)}
+                    </h5>
+                    <Button className="btn btn-dark" onClick={logout}>
+                      Logout
+                    </Button>
                   </>
                 ) : (
                   <>

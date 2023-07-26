@@ -1,31 +1,39 @@
-import React, { useState, useRef, useEffect, useContext } from 'react';
-import { Container, Row, Col, Form, ListGroup } from 'reactstrap';
-import { useParams, useNavigate } from 'react-router-dom';
+import React, { useState, useRef, useEffect, useContext } from "react";
+import { Container, Row, Col, Form, ListGroup, Alert } from "reactstrap";
+import { useParams } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
-import calculateAvgRating from '../utils/avgRating';
-import avtar from '../assets/images/avatar.jpg';
-import Booking from '../Component/Booking/Booking';
-import Newsletter from '../Shared/Newsletter';
+import calculateAvgRating from "../utils/avgRating";
+import avtar from "../assets/images/avatar.jpg";
+import Booking from "../Component/Booking/Booking";
+import Newsletter from "../Shared/Newsletter";
 import "../styles/Tourdetails.css";
 import axios from "axios";
 import { BASE_URL } from "../utils/config";
-import { AuthContext } from '../context/AuthContext';
-
+import { AuthContext } from "../context/AuthContext";
 
 const TourDetails = () => {
   const { id } = useParams();
-  const reviewMsgRef = useRef('');
+  const reviewMsgRef = useRef("");
   const [tourRating, setTourRating] = useState(null);
   const [reviews, setReviews] = useState([]);
-  const {user } = useContext(AuthContext);
-  const navigate = useNavigate()
-
+  const { user } = useContext(AuthContext);
+  const [isReviewSuccess, setIsReviewSuccess] = useState(false);
+  const [isReviewError, setIsReviewError] = useState(false);
+  const [isLoginAlertVisible, setIsLoginAlertVisible] = useState(false);
 
   // Fetch tour data using tourId (if available)
-  const { data: tour, loading: loadingTour, error: errorTour } = useFetch(`tours/${id}`);
+  const {
+    data: tour,
+    loading: loadingTour,
+    error: errorTour,
+  } = useFetch(`tours/${id}`);
 
   // Fetch reviews for the tour using tourId (if available)
-  const { data: fetchedReviews, loading: loadingReviews, error: errorReviews } = useFetch(`review/${id}/`);
+  const {
+    data: fetchedReviews,
+    loading: loadingReviews,
+    error: errorReviews,
+  } = useFetch(`review/${id}/`);
 
   // Fetch updated reviews from server
   useEffect(() => {
@@ -33,8 +41,6 @@ const TourDetails = () => {
       setReviews(fetchedReviews);
     }
   }, [fetchedReviews]);
-
-  console.log(reviews);
 
   // Perform error handling in case the tour or reviews are still loading
   if (loadingTour || loadingReviews) {
@@ -51,46 +57,47 @@ const TourDetails = () => {
     return <div>Error loading tour details.</div>;
   }
 
-  const { photo, title, desc, price, city, distance, address, maxGroupSize } = tour;
+  const { photo, title, desc, price, city, distance, address, maxGroupSize } =
+    tour;
   const { totalRating, avgRating } = calculateAvgRating(reviews);
 
-  const options = { day: 'numeric', month: 'long', year: 'numeric' };
+  const options = { day: "numeric", month: "long", year: "numeric" };
 
   const submitHandler = async (e) => {
     e.preventDefault();
-  
+
     if (!user) {
-      alert("Please log in to submit a review.");
-      navigate("/login");
+      setIsLoginAlertVisible(true);
       return;
     }
-  
+
     const reviewMsg = reviewMsgRef.current.value;
     const username = user.username;
-  
+
     const reviewData = {
       rating: tourRating,
       reviewText: reviewMsg,
       username: username,
     };
-  
+
     try {
       const response = await axios.post(`${BASE_URL}/review/${id}`, reviewData);
-  
-      console.log("Review Data:", response.data);
-  
+
+
       // Update the reviews state with the new review
+      setReviews([...reviews, response.data]);
+
+      // Reset review form fields
       setTourRating(null);
-  
-      // Refresh the page after a successful review submission
+      reviewMsgRef.current.value = "";
+
+      setIsReviewSuccess(true);
       window.location.reload();
     } catch (error) {
-      alert("Failed to submit review: " + error.response.data.message);
-    }   alert("Review Successful");
-   
+      setIsReviewError(true);
+    }
   };
-  
-  
+
   const handleRatingClick = (value) => {
     setTourRating((prevRating) => (prevRating === value ? null : value));
   };
@@ -129,7 +136,8 @@ const TourDetails = () => {
                       {city}
                     </span>
                     <span>
-                      <i className="ri-money-dollar-circle-line"></i> {price}/Per Person
+                      <i className="ri-money-dollar-circle-line"></i> {price}
+                      /Per Person
                     </span>
                     <span>
                       <i className="ri-map-pin-line"></i>
@@ -146,13 +154,42 @@ const TourDetails = () => {
 
                 <div className="tour__reviews mt-4">
                   <h4>Reviews ({reviews?.length || 0} reviews)</h4>
+                  {isReviewSuccess && (
+                    <Alert
+                      color="success"
+                      toggle={() => setIsReviewSuccess(false)}
+                    >
+                      Review Successful
+                    </Alert>
+                  )}
+
+                  {isReviewError && (
+                    <Alert
+                      color="danger"
+                      className=""
+                      toggle={() => setIsReviewError(false)}
+                    >
+                      Failed to submit review. Please try again.
+                    </Alert>
+                  )}
+
+                  {isLoginAlertVisible && (
+                    <Alert
+                      color="warning"
+                      toggle={() => setIsLoginAlertVisible(false)}
+                    >
+                      Please login to submit a review.
+                    </Alert>
+                  )}
                   <Form onSubmit={submitHandler}>
                     <div className="d-flex align-items-center gap-3 mb-4 rating__group">
                       {[1, 2, 3, 4, 5].map((value) => (
                         <span
                           key={value}
                           onClick={() => handleRatingClick(value)}
-                          className={tourRating && value <= tourRating ? 'active' : ''}
+                          className={
+                            tourRating && value <= tourRating ? "active" : ""
+                          }
                         >
                           {value} <i className="ri-star-fill"></i>
                         </span>
@@ -160,7 +197,12 @@ const TourDetails = () => {
                     </div>
 
                     <div className="review__input">
-                      <input type="text" ref={reviewMsgRef} placeholder="Share your Thoughts" required />
+                      <input
+                        type="text"
+                        ref={reviewMsgRef}
+                        placeholder="Share your Thoughts"
+                        required
+                      />
                       <button className="primary__btn text-white" type="submit">
                         Submit
                       </button>
@@ -175,10 +217,16 @@ const TourDetails = () => {
                           <div className="d-flex align-items-center justify-content-between">
                             <div>
                               <h5>{review.username}</h5>
-                              <p>{new Date(review.createdAt).toLocaleDateString('en-in', options)}</p>
+                              <p>
+                                {new Date(review.createdAt).toLocaleDateString(
+                                  "en-in",
+                                  options
+                                )}
+                              </p>
                             </div>
                             <span className="d-flex align-items-center">
-                              {review.rating}<i className="ri-star-s-fill"></i>
+                              {review.rating}
+                              <i className="ri-star-s-fill"></i>
                             </span>
                           </div>
                           <h6>{review.reviewText}</h6>
@@ -196,6 +244,8 @@ const TourDetails = () => {
         </Container>
       </section>
       <Newsletter />
+
+      {/* Bootstrap Alerts */}
     </>
   );
 };

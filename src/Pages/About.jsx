@@ -4,10 +4,11 @@ import Subtitle from "../Shared/Subtitle";
 import '../styles/About.css';
 import worldImg from "../assets/images/world.png"
 import logo1 from "../assets/images/logo1.png"
+import Newsletter from "../Shared/Newsletter";
 
 const About = () => {
   return (
-    <section className="about">
+    <><section className="about">
       <Container>
         <Row>
           <Col lg="6">
@@ -29,11 +30,11 @@ const About = () => {
             </div>
           </Col>
           <div className="about__image d-flex align-items-center">
-    <img src={logo1} height={250} width={250} alt="" />
-  </div>
+            <img src={logo1} height={250} width={250} alt="" />
+          </div>
         </Row>
       </Container>
-    </section>
+    </section><Newsletter /></>
   );
 };
 

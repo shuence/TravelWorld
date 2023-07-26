@@ -1,5 +1,4 @@
-import React from "react";
-import { useState, useContext } from "react";
+import React, { useState, useContext } from "react";
 import { Container, Row, Col, Form, FormGroup, Button } from "reactstrap";
 import { Link, useNavigate } from "react-router-dom";
 import "../styles/Login.css";
@@ -10,9 +9,13 @@ import { BASE_URL } from "../utils/config";
 
 const Login = () => {
   const [credentials, setCredentials] = useState({
-    email: undefined,
-    password: undefined,
+    email: "",
+    password: "",
   });
+
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(null);
+  const [showPassword, setShowPassword] = useState(false); // State to toggle password visibility
 
   const { dispatch } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -29,6 +32,7 @@ const Login = () => {
     e.preventDefault();
 
     dispatch({ type: "LOGIN_START" });
+    setError(null); // Reset the error on each login attempt
     try {
       const res = await fetch(`${BASE_URL}/auth/login`, {
         method: "POST",
@@ -41,19 +45,24 @@ const Login = () => {
 
       const result = await res.json();
 
-      console.log("Login Data:", result);
-
       if (!res.ok) {
-        alert(result.message);
+        setError(result.message);
         dispatch({ type: "LOGIN_FAILURE", payload: result.message });
       } else {
         dispatch({ type: "LOGIN_SUCCESS", payload: result });
-        navigate("/");
+        setSuccess("Login successful!"); // Set the success message
+        setTimeout(() => {
+          navigate("/");
+        }, 1000);
       }
     } catch (error) {
-      alert(error.message);
+      setError("An error occurred while logging in. Please try again later.");
       dispatch({ type: "LOGIN_FAILURE", payload: error.message });
     }
+  };
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
   };
 
   return (
@@ -71,6 +80,8 @@ const Login = () => {
                   <img src={userIcon} alt="" />
                 </div>
                 <h2>Login</h2>
+                {error && <div className="alert alert-danger">{error}</div>}
+                {success && <div className="alert alert-success">{success}</div>}
                 <Form onSubmit={handleClick}>
                   <FormGroup>
                     <input
@@ -83,14 +94,20 @@ const Login = () => {
                     />
                   </FormGroup>
                   <FormGroup>
-                    <input
-                      type="password"
-                      placeholder="Password"
-                      required
-                      autoComplete="true"
-                      id="password"
-                      onChange={handleChange}
-                    />
+                    <div className="password__input">
+                      <input
+                        type={showPassword ? "text" : "password"}
+                        placeholder="Password"
+                        required
+                        autoComplete="true"
+                        id="password"
+                        onChange={handleChange}
+                      />
+                      <i
+                        className={`ri-eye-line${showPassword ? "-slash" : ""}`}
+                        onClick={togglePasswordVisibility}
+                      ></i>
+                    </div>
                   </FormGroup>
                   <Button
                     className="btn secondary__btn auth__btn"

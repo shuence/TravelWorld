@@ -41,7 +41,6 @@
   position: sticky;
   top: 0;
   z-index: 999;
-  left: 0;
   box-shadow: 3px 3px 8px -3px #ddd;
 }
 
@@ -84,6 +83,11 @@
   .mobile__menu {
     display: block;
   }
+
+  /* Fix sticky header for small devices */
+  .sticky__header {
+    position: fixed;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -98,7 +102,7 @@
 
 @media only screen and (max-width: 576px) {
   .logo img {
-    width: 50%;
+    width: 70%;
   }
 
   .navigation {
@@ -135,34 +139,16 @@
   .mobile__menu {
     display: block;
   }
+
+  /* Fix sticky header for extra small devices */
+  .sticky__header {
+    position: fixed;
+  }
 }
-
-
 
 @media only screen and (max-width: 376px) {
   .logo img {
     width: 60%;
-  }
-
-  .mobile__menu {
-    font-size: 1.2rem;
-    padding: 0.5rem; /* Add some padding for easy tapping */
-  }
-
-  .logged__in_h5 {
-    font-size: 0.8rem;
-  }
-
-  .logged__in {
-    font-size: 0.7rem;
-  }
-
-  .nav__item a {
-    font-size: 1rem;
-  }
-
-  h5 {
-    font-size: 1rem;
   }
 
   .menu {
@@ -170,8 +156,10 @@
   }
 }
 
+.h5 {
+  font-size: 0.8rem;
+}
 
-  
 @keyframes slideInRight {
   from {
     transform: translateX(100%);
