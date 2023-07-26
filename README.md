@@ -59,6 +59,7 @@ yarn serve
 - **Newsletter Signup:** Allow users to subscribe to a newsletter to receive updates and promotions.
 - **User Reviews and Testimonials:** Showcase positive reviews and testimonials from previous customers to build trust.
 - **Contact Form:** Provide a contact form for users to get in touch with inquiries or feedback.
+- **Alerts:** Appropriate alerts of errors and success for better user experience.
 - **FAQ's:** Include a frequently asked questions (FAQ) section to address common queries from users.
 
 ## What I learned
