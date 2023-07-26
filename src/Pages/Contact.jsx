@@ -58,6 +58,11 @@ const Contact = () => {
               <p>Contact No: +1 123-456-7890</p>
               <p>Email: contact@example.com</p>
             </div>
+            {alertVisible && (
+              <Alert color={alertType} className="mt-3">
+                {alertMessage}
+              </Alert>
+            )}
             <Form onSubmit={handleSubmit}>
               <FormGroup className="form__group">
                 <input
@@ -107,11 +112,6 @@ const Contact = () => {
                 Submit
               </Button>
             </Form>
-            {alertVisible && (
-              <Alert color={alertType} className="mt-3">
-                {alertMessage}
-              </Alert>
-            )}
           </Col>
         </Row>
       </Container>
