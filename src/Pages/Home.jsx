@@ -148,7 +148,6 @@ const Home = () => {
     </section>
     <Contact/>
     <Newsletter/>
-
     </>
   )
 }

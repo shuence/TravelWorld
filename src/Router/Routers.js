@@ -10,6 +10,7 @@ import ThankYou from '../Pages/ThankYou';
 import About from '../Pages/About';
 import FAQ from '../Shared/FAQ';
 import Contact from '../Pages/Contact';
+import Gallery from '../Pages/Gallery';
 
 const Router = () => {
   const location = useLocation();
@@ -29,6 +30,7 @@ const Router = () => {
       <Route path="/thank-you" element={<ThankYou />} />
       <Route path="/search" element={<SearchResultList />} />
       <Route path="/faq" element={<FAQ />} />
+      <Route path="/gallery" element={<Gallery />} />
       <Route path="/contact" element={<Contact />} />
     </Routes>
   );
