@@ -8,23 +8,23 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Resources
 
 - [React Docs](https://beta.reactjs.org/)
-- [ BootStrap ](https://getbootstrap.com/docs/)
-- [ ReactStrap](https://github.com/reactstrap/reactstrap)
+- [BootStrap](https://getbootstrap.com/docs/)
+- [ReactStrap](https://github.com/reactstrap/reactstrap)
 - [Stackoverflow](https://stackoverflow.com/)
+
 ## Authors
 
 - [@Shuence](https://www.github.com/shuence) 💫
+
 ## Badges
 
 [![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
-
 
 ## Live Preview
 
 [TravelWorld 🌍](https://travelworldtours.netlify.app/)
 
 ![image](https://github.com/shuence/FitClub/assets/65482186/4c863ee9-2e02-4e98-95c0-e122cf91320e)
-
 
 ## Setup
 
@@ -35,12 +35,11 @@ git clone <https://github.com/shuence/Travel-World>
 cd Travel-World
 yarn
 yarn serve
-
 ```
 
 ## Environment Variables
 
-`REACT_APP_BASE_URL`= http://localhost:4000/api/v1
+`REACT_APP_BASE_URL`= <http://localhost:4000/api/v1>
 
 ## Features
 
@@ -54,7 +53,11 @@ yarn serve
 - **Reviews and Ratings:** Allow users to leave reviews and ratings for tours they have experienced.
 - **Responsive Design:** Ensure the website is optimized for various devices, including desktops, tablets, and smartphones.
 - **Newsletter Signup:** Allow users to subscribe to a newsletter to receive updates and promotions.
-- **User Reviews and Testimonials:** Showcase positive reviews and testimonials from previous customers to build trust.While building this project, I embarked on my first full-stack journey, transitioning from frontend development to working with the backend. The journey was both exciting and challenging, and I learned a lot along the way:
+- **User Reviews and Testimonials:** Showcase positive reviews and testimonials from previous customers to build trust.
+
+## What I learned
+
+While building this project, I embarked on my first full-stack journey, transitioning from frontend development to working with the backend. The journey was both exciting and challenging, and I learned a lot along the way:
 
 1. **Frontend Gracefulness:** As I crafted the frontend, I encountered various errors, but I embraced each challenge as an opportunity to learn. With useState and other hooks, along with Bootstrap for styling, I built an intuitive and responsive user interface.
 
@@ -71,6 +74,7 @@ yarn serve
 7. **Version Control and Rollbacks:** I grasped the importance of version control not only for the codebase but also for server configurations, facilitating easy rollbacks if needed.
 
 Overall, this project marked a significant milestone in my journey as a full-stack developer. Combining frontend and backend expertise, I can now confidently bring complete web applications to life and tackle new challenges with enthusiasm.
+
 ## Tech Stack
 
 **Client:** React, Bootstrap, Reactstrap, Remix Icons
@@ -87,15 +91,17 @@ Overall, this project marked a significant milestone in my journey as a full-sta
 - Introduce advanced search filters for customized tour searches.
 - Integrate geolocation services for location-based tour suggestions.
 - Implement a user dashboard for managing and tracking bookings.
-# Hi, I'm Shuence! 👋
 
+# Hi, I'm Shuence! 👋
 
 ## 🚀 About Me
 
 I'm Shubham Pitekar, a passionate full-stack developer with expertise in ReactJS,NextJS, NodeJs,ExpressJS and MongoDb. I love turning ideas into reality on the web. I thrive on challenges and continuously seek opportunities to push my boundaries. Let's create impactful projects together!
+
 ## 🛠 Skills
 
 JavaScript, HTML, CSS, React, Bootstrap, Node.js, Express, MongoDB.
+
 ## Happy coding 💯
 
 Made with love from [Shuence](https://shuence.netlify.app) ❤️
