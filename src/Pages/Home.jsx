@@ -13,6 +13,7 @@ import FeaturedToursList from '../FeaturedTours/FeaturedToursList'
 import MasonryImagesGallery from '../Component/Image-gallery/MasonryImagesGallery'
 import Testimonials from '../Component/Testimonials/Testimonials'
 import Newsletter from '../Shared/Newsletter'
+import Contact from './Contact'
 
 const Home = () => {
   return (
@@ -145,6 +146,7 @@ const Home = () => {
         </Row>
       </Container>
     </section>
+    <Contact/>
     <Newsletter/>
 
     </>

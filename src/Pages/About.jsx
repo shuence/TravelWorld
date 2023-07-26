@@ -5,6 +5,7 @@ import '../styles/About.css';
 import worldImg from "../assets/images/world.png"
 import logo1 from "../assets/images/logo1.png"
 import Newsletter from "../Shared/Newsletter";
+import Contact from "./Contact";
 
 const About = () => {
   return (
@@ -34,7 +35,9 @@ const About = () => {
           </div>
         </Row>
       </Container>
-    </section><Newsletter /></>
+    </section>
+    <Contact/>
+    <Newsletter /></>
   );
 };
 

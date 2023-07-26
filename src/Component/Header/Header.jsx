@@ -1,9 +1,9 @@
-import React, { useRef, useEffect, useContext } from "react";
+import React, { useRef, useEffect, useContext, useState } from "react";
 import { Container, Row, Button } from "reactstrap";
 import { NavLink, Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
-import "./header.css";
 import { AuthContext } from "../../context/AuthContext";
+import "./header.css";
 
 const nav__links = [
   {
@@ -21,6 +21,7 @@ const nav__links = [
 ];
 
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // State to keep track of menu open/close
   const headerRef = useRef(null);
   const menuRef = useRef(null);
   const { user, dispatch } = useContext(AuthContext);
@@ -30,6 +31,7 @@ const Header = () => {
     dispatch({ type: "LOGOUT" });
     navigate("/");
   };
+
   const stickyHeaderFunc = () => {
     window.addEventListener("scroll", () => {
       if (headerRef.current) {
@@ -50,7 +52,7 @@ const Header = () => {
     return () => window.removeEventListener("scroll", stickyHeaderFunc);
   });
 
-  const toggleMenu = () => menuRef.current.classList?.toggle("show__menu");
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen); // Toggle menu open/close state
 
   return (
     <header className="header" ref={headerRef}>
@@ -63,7 +65,7 @@ const Header = () => {
               </Link>
             </div>
             {/*Menu start */}
-            <div className="navigation" ref={menuRef} onClick={toggleMenu}>
+            <div className={`navigation ${isMenuOpen ? "show__menu" : ""}`} ref={menuRef} onClick={toggleMenu}>
               <ul className="menu d-flex align-items-center gap-5">
                 {nav__links.map((item, index) => {
                   return (
@@ -108,7 +110,8 @@ const Header = () => {
               </div>
 
               <span className="mobile__menu" onClick={toggleMenu}>
-                <i className="ri-menu-line"></i>
+                {/* Use the icon class to render the close icon */}
+                {isMenuOpen ? <i className="ri-close-line"></i> : <i className="ri-menu-line"></i>}
               </span>
             </div>
           </div>

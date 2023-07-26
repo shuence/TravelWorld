@@ -5,11 +5,11 @@ import useFetch from "../hooks/useFetch";
 import calculateAvgRating from "../utils/avgRating";
 import avtar from "../assets/images/avatar.jpg";
 import Booking from "../Component/Booking/Booking";
-import Newsletter from "../Shared/Newsletter";
 import "../styles/Tourdetails.css";
 import axios from "axios";
 import { BASE_URL } from "../utils/config";
 import { AuthContext } from "../context/AuthContext";
+import FAQ from "../Shared/FAQ";
 
 const TourDetails = () => {
   const { id } = useParams();
@@ -243,7 +243,7 @@ const TourDetails = () => {
           </Row>
         </Container>
       </section>
-      <Newsletter />
+      <FAQ />
 
       {/* Bootstrap Alerts */}
     </>

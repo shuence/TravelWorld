@@ -8,6 +8,8 @@ import Register from '../Pages/Register';
 import SearchResultList from '../Pages/SearchResultList';
 import ThankYou from '../Pages/ThankYou';
 import About from '../Pages/About';
+import FAQ from '../Shared/FAQ';
+import Contact from '../Pages/Contact';
 
 const Router = () => {
   const location = useLocation();
@@ -26,6 +28,8 @@ const Router = () => {
       <Route path="/register" element={<Register />} />
       <Route path="/thank-you" element={<ThankYou />} />
       <Route path="/search" element={<SearchResultList />} />
+      <Route path="/faq" element={<FAQ />} />
+      <Route path="/contact" element={<Contact />} />
     </Routes>
   );
 };
