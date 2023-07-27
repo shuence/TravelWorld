@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Form, FormGroup, Button, Alert } from "reactstrap";
 import axios from "axios";
-import "./Contact.css";
+import "../styles/Contact.css";
 import Subtitle from "../Shared/Subtitle";
 import { BASE_URL } from "../utils/config";
 
