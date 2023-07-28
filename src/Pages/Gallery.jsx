@@ -1,7 +1,7 @@
 import React from 'react'
 import {Container,Row, Col} from 'reactstrap'
 import Subtitle from '../Shared/Subtitle'
-import MasonryImagesGallery from '../Component/Image-gallery/MasonryImagesGallery'
+import MasonryImagesGallery from '../Components/Image-gallery/MasonryImagesGallery'
 
 
 const Gallery = () => {

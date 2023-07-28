@@ -10,8 +10,8 @@ import experienceImage from "../assets/images/experience.png"
 import SearchBar from '../Shared/SearchBar'
 import ServiceList from '../Services/ServiceList'
 import FeaturedToursList from '../FeaturedTours/FeaturedToursList'
-import MasonryImagesGallery from '../Component/Image-gallery/MasonryImagesGallery'
-import Testimonials from '../Component/Testimonials/Testimonials'
+import MasonryImagesGallery from '../Components/Image-gallery/MasonryImagesGallery'
+import Testimonials from '../Components/Testimonials/Testimonials'
 import Newsletter from '../Shared/Newsletter'
 import Contact from './Contact'
 

@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
 import calculateAvgRating from "../utils/avgRating";
 import avtar from "../assets/images/avatar.jpg";
-import Booking from "../Component/Booking/Booking";
+import Booking from "../Components/Booking/Booking";
 import "../styles/Tourdetails.css";
 import axios from "axios";
 import { BASE_URL } from "../utils/config";
