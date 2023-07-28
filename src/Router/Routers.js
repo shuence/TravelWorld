@@ -11,6 +11,7 @@ import About from '../Pages/About';
 import FAQ from '../Shared/FAQ';
 import Contact from '../Pages/Contact';
 import Gallery from '../Pages/Gallery';
+import PageNotFound from '../Pages/PageNotFound';
 
 const Router = () => {
   const location = useLocation();
@@ -32,6 +33,7 @@ const Router = () => {
       <Route path="/faq" element={<FAQ />} />
       <Route path="/gallery" element={<Gallery />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="*" element={<PageNotFound/>} />
     </Routes>
   );
 };
