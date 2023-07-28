@@ -59,6 +59,7 @@ yarn serve
 - **Contact Form:** Provide a contact form for users to get in touch with inquiries or feedback.
 - **Alerts:** Appropriate alerts of errors and success for better user experience.
 - **FAQ's:** Include a frequently asked questions (FAQ) section to address common queries from users.
+- **Analytics** Integrated Google Analytics for analytics.
 
 ## What I learned
 
