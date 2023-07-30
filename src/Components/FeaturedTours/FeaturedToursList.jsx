@@ -1,7 +1,8 @@
 import React from 'react';
-import TourCard from '../Shared/TourCard';
-import { Col } from 'reactstrap';
-import useFetch from '../hooks/useFetch';
+import TourCard from '../../Shared/TourCard';
+import { Button, Col } from 'reactstrap';
+import useFetch from '../../hooks/useFetch';
+import { NavLink } from 'react-router-dom';
 
 const FeaturedToursList = () => {
   const { data: featuredTours, loading } = useFetch(`tours/featured`);
@@ -23,6 +24,11 @@ const FeaturedToursList = () => {
             <TourCard tour={tour} />
           </Col>
         ))}
+        <div className="viall__btn">
+          <NavLink to={"/tours"}>
+            <Button className='btn primary__btn'>View All Tours</Button>
+          </NavLink>
+        </div>
     </>
   );
 };

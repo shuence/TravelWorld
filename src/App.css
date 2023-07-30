@@ -73,6 +73,19 @@ ul {
   color: inherit;
 }
 
+.viall__btn {
+  text-align: center;
+}
+
+.error__msg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
 .section__subtitle {
   background: var(--secondary-color);
   font-family: var(--subtitle-font-name);
@@ -119,28 +132,25 @@ ul {
   color: var(--text-color);
 }
 
-
-
 @media only screen and (max-width: 992px) {
-  .primary__btn a, .secondary__btn a{
+  .primary__btn a,
+  .secondary__btn a {
     font-size: 0.9rem;
   }
 
-  .primary__btn, .secondary__btn, .btn-dark{
+  .primary__btn,
+  .secondary__btn,
+  .btn-dark {
     padding: 0.2rem 1.1rem !important;
   }
 
-  section{
+  section {
     padding: 40px 0px;
   }
+}
+
+@media only screen and (max-width: 768px) {
+  .section__subtitle {
+    font-size: 1.3rem;
   }
-
-  @media only screen and (max-width: 768px) {
-    .section__subtitle{
-      font-size: 1.3rem;
-    }
-  }
-
-
-
-
+}

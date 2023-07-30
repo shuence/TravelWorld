@@ -18,6 +18,10 @@ const nav__links = [
     path: "/tours",
     display: "Tours",
   },
+  {
+    path: "/blogs",
+    display: "Blogs"
+  }
 ];
 
 const Header = () => {
@@ -88,7 +92,6 @@ const Header = () => {
               <div className="nav__btns d-flex align-items-center gap-4">
                 {user ? (
                   <>
-                    {/* Optionally display user's name */}
                     <h5 className="mb-0 p-2 logged__in_h5">
                       {user.username.charAt(0).toUpperCase() +
                         user.username.slice(1)}

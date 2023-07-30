@@ -1,6 +1,6 @@
 import React from 'react'
 import "../styles/Home.css"
-import {Container,Row, Col} from 'reactstrap'
+import {Container,Row, Col, Button} from 'reactstrap'
 import heroImg from "../assets/images/hero-img01.jpg"
 import heroImg2 from "../assets/images/hero-img02.jpg"
 import heroVideo from "../assets/images/hero-video.mp4"
@@ -9,11 +9,13 @@ import worldImg from "../assets/images/world.png"
 import experienceImage from "../assets/images/experience.png"
 import SearchBar from '../Shared/SearchBar'
 import ServiceList from '../Services/ServiceList'
-import FeaturedToursList from '../FeaturedTours/FeaturedToursList'
+import FeaturedToursList from '../Components/FeaturedTours/FeaturedToursList'
 import MasonryImagesGallery from '../Components/Image-gallery/MasonryImagesGallery'
 import Testimonials from '../Components/Testimonials/Testimonials'
 import Newsletter from '../Shared/Newsletter'
 import Contact from './Contact'
+import { NavLink } from 'react-router-dom'
+import FeaturedBlogsList from '../Components/FeaturedBlogs.jsx/FeaturedBlogsList'
 
 const Home = () => {
   return (
@@ -45,7 +47,7 @@ const Home = () => {
           </Col>
           <Col lg="2">
             <div className="hero__img-box video-box mt-4">
-              <video src={heroVideo} alt="" autoPlay controls loop muted />
+              <video src={heroVideo} alt="" autoPlay loop muted />
             </div>
           </Col>
           <Col lg="2">
@@ -134,7 +136,21 @@ const Home = () => {
         </Row>
       </Container>
     </section>
-
+    <section>
+      <Container>
+        <div className="title">
+          <Subtitle subtitle={"Featured Blogs"} />
+        </div>
+        <Row>
+      <FeaturedBlogsList lg={4} md={6} sm={6}/>
+        </Row>
+        <div className="viall__btn">
+          <NavLink to={"/blogs"}>
+            <Button className="btn primary__btn">View All Blogs</Button>
+          </NavLink>
+        </div>
+      </Container>
+    </section>
     <section>
       <Container>
         <Row>

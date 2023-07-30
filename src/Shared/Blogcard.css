@@ -1,0 +1,117 @@
+.title{
+    font-size: 2.3rem;
+    margin-bottom: 2.5rem;
+    margin-top: 1rem;
+}
+
+.blog__img img{
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+}
+
+.card{
+    border:none !important;
+    box-shadow: rgba(220, 178, 178, 0.2) 0px 18px 50px -10px;
+}
+
+.blog__img{
+    position: relative;
+}
+
+.blog__img span{
+    position: absolute;
+    bottom:0;
+    right: 0;
+    background: var(--primary-color);
+    color: #fff;
+    padding: 0.2rem 0.4rem;
+    height: max-content;
+    width: max-content;
+    border-radius: 3px 0 0 0;
+    z-index: 10;
+}
+
+.card__top span i {
+    color: var(--secondary-color);
+}
+
+.blog__rating{
+    font-size: .8rem;
+    color: var(--text-color);
+}
+
+.blog__rating span{
+    color:var(--text-color)
+}
+
+.blog__location{
+    color: var(--heading-color);
+    font-weight: 500;
+    font-size: .9rem;
+}
+
+.blog__rating i:nth-child(1) {
+    font-size: 1rem;
+    color: var(--heading-color);
+}
+
+.blog__title{
+    margin-top: 1rem;
+    font-size: .8rem;
+    cursor: pointer;
+}
+
+.blog__title a{
+    text-decoration: none;
+    color: var(--heading-color);
+}
+
+.blog__title a:hover{
+    color: var(--secondary-color);
+}
+
+.card__bottom h5{
+    font-size: 1rem;
+    color: var(--secondary-color);
+    font-weight: 700;
+}
+
+.card__bottom h5 span{
+    font-size: .8rem;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.booking__btn{
+    background: var(--secondary-color) !important;
+    cursor: pointer;
+    padding: 0.2rem .5rem !important;
+}
+
+.booking__btn a{
+    text-decoration: none;
+    color: #fff;
+    font-size: .8rem;
+}
+
+.booking__btn:hover{
+    color: #fff;
+}
+
+@media only screen and (max-width: 576px) {
+    .blog__title{
+        font-size: .8rem;
+    }
+
+    .booking__btn a{
+        font-size: 0.8rem;
+    }
+
+    .booking__btn{
+        padding: 0.2 0.5rem !important;
+    }
+
+    .blog__location, .blog__rating{
+        font-size: .8rem;
+    }
+}

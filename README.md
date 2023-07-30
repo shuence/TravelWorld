@@ -28,7 +28,7 @@ A Fullstack Tours & Travels Web App Using MERN Stack 💫
 
 ![image](https://github.com/shuence/FitClub/assets/65482186/4c863ee9-2e02-4e98-95c0-e122cf91320e)
 
-https://github.com/shuence/Travel-World/assets/65482186/69a5ebf9-85d7-4f65-a8a2-066dceebbc24
+<https://github.com/shuence/Travel-World/assets/65482186/69a5ebf9-85d7-4f65-a8a2-066dceebbc24>
 
 ## Setup
 
@@ -59,6 +59,7 @@ yarn serve
 - **Newsletter Signup:** Allow users to subscribe to a newsletter to receive updates and promotions.
 - **User Reviews and Testimonials:** Showcase positive reviews and testimonials from previous customers to build trust.
 - **Contact Form:** Provide a contact form for users to get in touch with inquiries or feedback.
+- **Blogs:** Added Blogs feature to provide more information to customers.
 - **Alerts:** Appropriate alerts of errors and success for better user experience.
 - **FAQ's:** Include a frequently asked questions (FAQ) section to address common queries from users.
 - **Analytics** Integrated Google Analytics for analytics.

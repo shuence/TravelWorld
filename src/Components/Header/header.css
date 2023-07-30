@@ -51,7 +51,13 @@
   box-shadow: 3px 3px 8px -3px #ddd;
 }
 
-/* Media queries for responsiveness */
+
+
+@media only screen and (min-width: 992px) {
+ h5 {
+    font-size: 1rem;
+  }
+}
 @media only screen and (max-width: 992px) {
   .logo img {
     width: 40%;
@@ -164,7 +170,12 @@
   }
 }
 
-.h5 {
+
+.nav__right h5 {
+  font-size: 0.8rem;
+}
+
+.nav__btns button {
   font-size: 0.8rem;
 }
 

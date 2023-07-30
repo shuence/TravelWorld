@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import Home from '../Pages/Home';
 import Tours from '../Pages/Tours';
 import TourDetails from '../Pages/TourDetails';
@@ -12,15 +12,14 @@ import FAQ from '../Shared/FAQ';
 import Contact from '../Pages/Contact';
 import Gallery from '../Pages/Gallery';
 import PageNotFound from '../Pages/PageNotFound';
+import Blogs from '../Pages/Blogs';
+import BlogDetails from '../Pages/BlogDetails';
+import ScrollToTop from '../utils/scrolltoTop';
 
 const Router = () => {
-  const location = useLocation();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [location]);
-
   return (
+    <>
+    <ScrollToTop />
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
@@ -33,8 +32,10 @@ const Router = () => {
       <Route path="/faq" element={<FAQ />} />
       <Route path="/gallery" element={<Gallery />} />
       <Route path="/contact" element={<Contact />} />
-      <Route path="*" element={<PageNotFound/>} />
-    </Routes>
+      <Route path="/blogs" element={<Blogs />} />
+      <Route path="/blogs/:id" element={<BlogDetails />} />
+      <Route path="*" element={<PageNotFound />} />
+    </Routes></>
   );
 };
 

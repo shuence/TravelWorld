@@ -54,7 +54,7 @@ const TourDetails = () => {
 
   // Perform error handling in case there's an error fetching the tour or reviews
   if (errorTour || !tour || errorReviews) {
-    return <div>Error loading tour details.</div>;
+    return <div className="error__msg">Error loading tour details. Check your network</div>;
   }
 
   const { photo, title, desc, price, city, distance, address, maxGroupSize } =
@@ -92,7 +92,9 @@ const TourDetails = () => {
       reviewMsgRef.current.value = "";
 
       setIsReviewSuccess(true);
-      window.location.reload();
+      setTimeout(() => {
+        window.location.reload();
+      }, 1000);
     } catch (error) {
       setIsReviewError(true);
     }
@@ -244,8 +246,6 @@ const TourDetails = () => {
         </Container>
       </section>
       <FAQ />
-
-      {/* Bootstrap Alerts */}
     </>
   );
 };

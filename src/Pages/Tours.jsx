@@ -8,7 +8,7 @@ import Newsletter from "../Shared/Newsletter";
 import { Container, Row, Col } from "reactstrap";
 
 const Tours = () => {
-  const { data: tours, loading } = useFetch("tours");
+  const { data: tours, loading, error } = useFetch("tours");
 
   if (loading) {
     return (
@@ -18,6 +18,20 @@ const Tours = () => {
       </div>
     );
   }
+
+  if (loading ) {
+    return (
+      <div className="loader-container">
+        <div className="loader" />
+        <div className="loading-text">Loading...</div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return <div className="error__msg">Error loading blog details. Check your network</div>;
+  }
+
 
   return (
     <div>

@@ -5,8 +5,6 @@ import "./Tourcard.css";
 import calculateAvgRating from "../utils/avgRating";
 import { useEffect } from "react";
 
-// ...
-
 const TourCard = ({ tour }) => {
   const { _id, title, city, photo, price, reviews } = tour;
 
@@ -20,7 +18,7 @@ const TourCard = ({ tour }) => {
   };
 
   useEffect(() => {
-    window.scrollTo(0, 0); // Scroll to the top of the page when the component mounts
+    window.scrollTo(0, 0); 
   }, []);
 
   return (
@@ -55,7 +53,6 @@ const TourCard = ({ tour }) => {
               <div onClick={handleScrollToTop}>{title}</div>
             </Link>
           </h5>
-
           <div className="card__bottom d-flex align-items-center justify-content-between mt-3">
             <h5>
               ${price}
