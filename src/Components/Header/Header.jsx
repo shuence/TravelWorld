@@ -71,6 +71,7 @@ const Header = () => {
             {/*Menu start */}
             <div className={`navigation ${isMenuOpen ? "show__menu" : ""}`} ref={menuRef} onClick={toggleMenu}>
               <ul className="menu d-flex align-items-center gap-5">
+              <li class="nav__item close__icon"><i class="ri-close-line"></i></li>
                 {nav__links.map((item, index) => {
                   return (
                     <li className="nav__item" key={index}>
@@ -121,6 +122,7 @@ const Header = () => {
         </Row>
       </Container>
     </header>
+    
   );
 };
 
