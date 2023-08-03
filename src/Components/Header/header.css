@@ -57,9 +57,8 @@
   }
 }
 
-
 @media only screen and (min-width: 992px) {
- h5 {
+  h5 {
     font-size: 1rem;
   }
 }
@@ -74,7 +73,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.411);
+
     z-index: 999;
     display: none;
   }
@@ -85,7 +84,7 @@
     right: 0;
     width: 30%;
     height: 65%;
-    padding-bottom: .5rem;
+    padding-bottom: 0.5rem;
     background: #fff;
     flex-direction: column;
     justify-content: center;
@@ -93,8 +92,8 @@
     animation-name: slideInRight;
     animation-duration: 0.3s;
     animation-fill-mode: forwards;
-    animation-duration: .3s;
-    line-height: .5rem;
+    animation-duration: 0.3s;
+    line-height: 0.5rem;
     right: 25px;
     padding-left: 20px;
   }
@@ -134,7 +133,6 @@
     position: fixed;
     top: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.411);
     z-index: 999;
     display: none;
   }
@@ -145,7 +143,7 @@
     right: 0;
     width: 35%;
     height: 60%;
-    padding-bottom: .5rem;
+    padding-bottom: 0.5rem;
     background: #fff;
     flex-direction: column;
     justify-content: center;
@@ -153,8 +151,8 @@
     animation-name: slideInRight;
     animation-duration: 0.3s;
     animation-fill-mode: forwards;
-    animation-duration: .3s;
-    line-height: .5rem;
+    animation-duration: 0.3s;
+    line-height: 0.5rem;
     right: 25px;
     padding-left: 20px;
   }
@@ -183,7 +181,6 @@
     height: 68%;
   }
 }
-
 
 .nav__right h5 {
   font-size: 0.8rem;
