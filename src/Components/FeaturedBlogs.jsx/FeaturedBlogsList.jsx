@@ -1,5 +1,5 @@
 import React from "react";
-import { Col } from "reactstrap";
+import { Button, Col, NavLink } from "reactstrap";
 import useFetch from "../../hooks/useFetch";
 import BlogCard from "../../Shared/BlogCard";
 import "../../Shared/Blogcard.css";
@@ -24,6 +24,11 @@ const FeaturedBlogsList = ({ lg,sm,md }) => {
             <BlogCard blog={blog} />
           </Col>
         ))}
+        <div className="viall__btn">
+          <NavLink to={"/blogs"}>
+            <Button className="btn primary__btn">View All Blogs</Button>
+          </NavLink>
+        </div>
     </>
   );
 };
