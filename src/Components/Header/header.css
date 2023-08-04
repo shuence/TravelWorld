@@ -51,12 +51,6 @@
   box-shadow: 3px 3px 8px -3px #ddd;
 }
 
-@media screen and (min-width: 994px) {
-  .close__icon {
-    display: none;
-  }
-}
-
 @media only screen and (min-width: 992px) {
   h5 {
     font-size: 1rem;
@@ -83,10 +77,13 @@
     top: 0;
     right: 0;
     width: 30%;
-    height: 65%;
+    height: 50%;
+    padding-top: 0rem;
+    margin-top: 5rem;
     padding-bottom: 0.5rem;
-    background: #fff;
+    background: lightgray;
     flex-direction: column;
+    border-radius: 1.5rem;
     justify-content: center;
     z-index: 9999;
     animation-name: slideInRight;
@@ -94,8 +91,8 @@
     animation-fill-mode: forwards;
     animation-duration: 0.3s;
     line-height: 0.5rem;
-    right: 25px;
-    padding-left: 20px;
+    right: 0px;
+    padding-left: 0;
   }
 
   .show__menu {
@@ -118,7 +115,7 @@
   }
 
   .menu {
-    width: calc(100% - 50%);
+    width: calc(100% - 65%);
   }
 }
 
@@ -141,10 +138,11 @@
     position: absolute;
     top: 0;
     right: 0;
-    width: 35%;
+    width: 45%;
     height: 60%;
+    border-radius: 1.5rem;
     padding-bottom: 0.5rem;
-    background: #fff;
+    background: lightgray;
     flex-direction: column;
     justify-content: center;
     z-index: 9999;
@@ -154,7 +152,6 @@
     animation-duration: 0.3s;
     line-height: 0.5rem;
     right: 25px;
-    padding-left: 20px;
   }
 
   .show__menu {
@@ -177,7 +174,7 @@
   }
 
   .menu {
-    width: 46%;
+    width: 50%;
     height: 68%;
   }
 }
