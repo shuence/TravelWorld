@@ -33,9 +33,9 @@ const Home = () => {
                 <span className="highlight">Memories</span>
               </h1>
               <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-              Phasellus tempus massa vitae elit consectetur, ut convallis massa ultricies.
-              Duis hendrerit turpis quis tincidunt lobortis. Nullam vel faucibus mauris. 
+              Pain itself is to be endured, while the pleasure of enduring is experienced. 
+              Time spent among the elite is to be valued, enhancing the movement of the mass.
+              Gradually, the rough handling will mix with the lobortis. There are no problems with the house. 
               </p>
             </div>
           </Col>
