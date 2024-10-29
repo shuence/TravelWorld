@@ -10,7 +10,7 @@
     "axios": "^1.6.0",
     "bootstrap": "^5.2.3",
     "dotenv": "^16.3.1",
-    "express": "^4.18.2",
+    "express": "^4.20.0",
     "gh-pages": "^5.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
